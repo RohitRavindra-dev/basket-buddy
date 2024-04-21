@@ -1,5 +1,5 @@
 import {createMaterialBottomTabNavigator} from 'react-native-paper/react-navigation';
-import {HomeScreen} from '../screens/HomeScreen';
+import {BasketHomeScreen} from '../screens/BasketHomeScreen';
 import {OrderScreen} from '../screens/OrderScreen';
 import React from 'react';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
@@ -15,10 +15,12 @@ export const AppTabs = () => {
       
       inactiveColor="#9cd6ff"
       barStyle={{backgroundColor: '#0074c7'}}
-      screenOptions={{}}>
+      screenOptions={{
+        
+      }}>
       <Tab.Screen
         name="Basket"
-        component={HomeScreen}
+        component={BasketHomeScreen}
         options={{
           tabBarColor: 'green',
           tabBarIcon: ({color, focused}) => (
