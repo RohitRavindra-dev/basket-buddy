@@ -2,7 +2,6 @@ import {createMaterialBottomTabNavigator} from 'react-native-paper/react-navigat
 import {BasketHomeScreen} from '../screens/BasketHomeScreen';
 import {OrderScreen} from '../screens/OrderScreen';
 import React from 'react';
-import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import Fontisto from 'react-native-vector-icons/Fontisto';
 
 const Tab = createMaterialBottomTabNavigator();
