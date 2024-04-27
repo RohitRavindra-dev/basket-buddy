@@ -1,7 +1,12 @@
-export type ItemCardProps = {
+export type ItemDetails = {
     name: string,
     brand: string,
     quantity: number,
     uom: string,
-    adjustmentHandler: ()=>any
+}
+
+export type ItemCardProps = {
+    itemDetails: ItemDetails,
+    index: number,
+    onClickRcvHandler: (index:number)=>any
 }

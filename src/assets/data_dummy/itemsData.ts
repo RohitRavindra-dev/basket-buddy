@@ -1,6 +1,6 @@
-import { ItemCardProps } from "../../components/item-card/types";
+import { ItemDetails } from "../../components/item-card/types";
 
-export const itemsListDummy: Array<ItemCardProps> = [
+export const itemsListDummy: Array<ItemDetails> = [
     {
         name: "K bele",
         brand: "Local",

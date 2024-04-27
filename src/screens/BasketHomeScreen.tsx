@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import {
+  Alert,
   FlatList,
   Pressable,
   Text,
@@ -10,14 +11,28 @@ import {AppHeader} from '../components/commons/header/Header';
 import {ItemCard} from '../components/item-card/ItemCard';
 import {itemsListDummy} from '../assets/data_dummy/itemsData';
 import {QuantModal} from '../components/modal/QuantModal';
-import { Spacer } from '../components/commons/spacer/spacer';
+import { Spacer } from '../components/commons/spacer/Spacer';
+import { ItemDetails } from '../components/item-card/types';
 
 export const BasketHomeScreen = () => {
   const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
+  const [curAdjItem, setCurAdjItem] = useState<ItemDetails|null>(null);
 
-  const adjustItem = () => {
+  const onClickRcvItem = (index: number) => {
+    setCurAdjItem(itemsListDummy[index])
     setIsModalOpen(true);
   };
+
+  const handleAdjModalClose = ()=>{
+    setCurAdjItem(null);
+    setIsModalOpen(false)
+  }
+
+  const onReceiveRequest = (itemDetails: ItemDetails, receivedQty: string)=>{
+    Alert.alert("Received Item!",`Received : ${receivedQty} of item: ${itemDetails.name}`)
+    handleAdjModalClose()
+  }
+
   return (
     <View style={{width: '100%', height: '100%', backgroundColor: '#f8f8f8'}}>
       <AppHeader headerTitle="Basket" />
@@ -44,16 +59,18 @@ export const BasketHomeScreen = () => {
           renderItem={({item, index}) => {
             return (
               <View style={{paddingHorizontal: 10}}>
-                <ItemCard {...item} adjustmentHandler={adjustItem} />
+                <ItemCard itemDetails={item} onClickRcvHandler={onClickRcvItem} index={index} />
               </View>
             );
           }}
         />
       </View>
-      <QuantModal
+     {curAdjItem && <QuantModal
         isOpen={isModalOpen}
-        modalCloseCallback={() => setIsModalOpen(false)}
-      />
+        itemDetails={curAdjItem}
+        modalCloseCallback={handleAdjModalClose}
+        onSubmit={onReceiveRequest}
+      />}
     </View>
   );
 };

@@ -1,9 +1,10 @@
 import React from 'react';
 import {Text, TouchableOpacity, View} from 'react-native';
 import {itemCardStyles as ics} from './styles';
-import {ItemCardProps} from './types';
 import {capitalize} from '../../utils/formatUtils';
-export const ItemCard = ({name, brand, quantity, uom, adjustmentHandler}: ItemCardProps) => {
+import { ItemCardProps } from './types';
+export const ItemCard = ({itemDetails, index, onClickRcvHandler}: ItemCardProps) => {
+  const {name, brand, quantity, uom} = itemDetails
   return (
     <View style={ics.card}>
       <View style={ics.detailsCntr}>
@@ -17,7 +18,7 @@ export const ItemCard = ({name, brand, quantity, uom, adjustmentHandler}: ItemCa
         </View>
       </View>
       <View style={ics.actionsCntr}>
-        <TouchableOpacity style={ics.adjustQuantButton} onPress={adjustmentHandler}>
+        <TouchableOpacity style={ics.adjustQuantButton} onPress={()=>onClickRcvHandler(index)}>
           <Text style={ics.receiveText}>Receive</Text>
         </TouchableOpacity>
       </View>

@@ -7,7 +7,6 @@ export const modalStyles = StyleSheet.create({
     position: 'absolute',
     top: '20%',
     left: '10%',
-    height: '50%',
     padding: 16,
     borderWidth: 1,
     borderColor: '#666',
@@ -31,26 +30,38 @@ export const modalStyles = StyleSheet.create({
     color: '#666'
   },
   quantDirCntr:{
-    paddingTop: 24
+    marginTop: 18,
+    borderWidth: 1,
+    borderColor: '#888',
+    borderRadius: 8,
+    paddingVertical: 12,
+    paddingHorizontal: 8,
+    backgroundColor:'#f8fff7'
   },
   directiveText:{
     fontSize: 18,
     fontWeight:'500',
-    color:'#555'
+    color:'#444'
   },
   quantEntryCntr:{
     flexDirection:'row',
     justifyContent:'flex-start',
     width:'100%',
-    alignItems:'center',
-    paddingVertical: 8,
+    alignItems:'flex-end',
+    paddingVertical: 6,
   },
   textEntry:{
     borderColor:'#aaa',
     borderWidth: 1,
-    fontSize: 21,
+    fontSize: 30,
     borderRadius: 4,
-    width:'30%'
+    width:'30%',
+    textAlignVertical:'bottom',
+    color:'#000',
+    fontWeight: '600',
+    paddingVertical: 0,
+    paddingTop: 4,
+    backgroundColor:'#fff'
   },
   expectedQuantity:{
     fontSize: 28,
@@ -62,5 +73,30 @@ export const modalStyles = StyleSheet.create({
     fontSize: 20,
     color: '#666',
     paddingLeft: 3
+  },
+  checkBoxCntr: {
+    paddingTop: 6,
+    flexDirection:'row',
+    alignItems:'center'
+  },
+  radioLabel:{
+    fontSize: 14,
+    color:'#333',
+
+  },
+  submitButtonCntr:{
+    paddingTop: 16
+  },
+  submitButton:{
+    backgroundColor:'#06b000',
+    width:'100%',
+    padding: 12,
+    borderRadius: 8,
+    alignItems:'center'
+  },
+  buttonText:{
+    fontSize: 24,
+    color:'#000d00',
+    fontWeight:'700'
   }
 });
