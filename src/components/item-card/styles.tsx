@@ -7,13 +7,13 @@ export const itemCardStyles = StyleSheet.create({
     borderRadius: 12,
     borderWidth: 1,
     elevation: 2,
-    padding: 14,
-    flexDirection: 'row',
+    padding: 14
   },
   detailsCntr: {
-    width: '80%',
+    width: '100%',
     flexDirection: 'row',
     justifyContent: 'space-between',
+    alignItems:'center'
   },
   nameBrandCntr: {
     width: '70%',
@@ -28,37 +28,40 @@ export const itemCardStyles = StyleSheet.create({
     color: '#333',
   },
   quantUomCntr: {
-    alignItems: 'flex-end',
+    flexDirection:'row',
+    alignItems: 'baseline',
     paddingRight: '10%',
   },
   quantity: {
-    fontSize: 32,
-    color: '#0037ad',
+    fontSize: 36,
+    color: '#1f0003',
     fontWeight: '600',
   },
   uom: {
-    fontSize: 18,
+    paddingLeft: 4,
+    fontSize: 20,
     color: '#333',
     fontWeight: '500',
   },
   actionsCntr: {
-    width: '20%',
+    width: '100%',
     justifyContent: 'center',
+    paddingTop: 12
   },
   adjustQuantButton:{
     borderWidth: 1.25,
-    borderRadius: 16,
-    backgroundColor:'#d4ffc2',
-    paddingVertical: 18,
+    borderRadius: 12,
+    backgroundColor:'#008720',
+    paddingVertical: 8,
     paddingHorizontal: 4,
     width:'100%',
     justifyContent:'center',
     alignItems:'center',
-    elevation: 2
+    elevation: 1
   },
   receiveText:{
-    fontSize: 17,
-    fontWeight: '700',
-    color:'#0e2e00'
+    fontSize: 24,
+    fontWeight: '600',
+    color:'#f0fff3'
   }
 });

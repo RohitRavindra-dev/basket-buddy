@@ -3,7 +3,7 @@ import { ColorValue, DimensionValue, View } from "react-native"
 
 export type SpacerProps = {
     height: DimensionValue,
-    color: ColorValue
+    color?: ColorValue
 }
 
 

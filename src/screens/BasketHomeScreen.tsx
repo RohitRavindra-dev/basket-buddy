@@ -13,6 +13,8 @@ import {itemsListDummy} from '../assets/data_dummy/itemsData';
 import {QuantModal} from '../components/modal/QuantModal';
 import { Spacer } from '../components/commons/spacer/Spacer';
 import { ItemDetails } from '../components/item-card/types';
+import { SummarySection } from '../components/summary-header/SummarySection';
+import { getTotalWeight } from '../utils/mapperUtils';
 
 export const BasketHomeScreen = () => {
   const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
@@ -54,6 +56,14 @@ export const BasketHomeScreen = () => {
           ItemSeparatorComponent={() => (
             <View style={{height: 20, width: '100%'}}></View>
           )}
+          ListHeaderComponent={()=>{
+            return (
+              <View style={{width:'100%'}}>
+                <SummarySection countsTotal={itemsListDummy.length} countsComplete={0} weight={getTotalWeight(itemsListDummy)}/>
+                <Spacer height={14}  />
+                </View>
+            )
+          }}
           ListFooterComponent={()=><Spacer height={100} color={'#f8f8f8'} />}
           keyExtractor={(item,index)=>index.toString()}
           renderItem={({item, index}) => {

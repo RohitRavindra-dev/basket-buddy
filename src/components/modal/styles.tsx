@@ -88,7 +88,6 @@ export const modalStyles = StyleSheet.create({
     paddingTop: 16
   },
   submitButton:{
-    backgroundColor:'#06b000',
     width:'100%',
     padding: 12,
     borderRadius: 8,

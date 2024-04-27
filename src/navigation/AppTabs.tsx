@@ -25,7 +25,7 @@ export const AppTabs = () => {
           tabBarIcon: ({color, focused}) => (
             <Fontisto
               name="shopping-basket"
-              color={focused ? '#a89502' : 'white'}
+              color={focused ? '#693600' : 'white'}
               size={22}
             />
           ),
@@ -38,7 +38,7 @@ export const AppTabs = () => {
           tabBarIcon: ({color, focused}) => (
             <Fontisto
               name="shopping-basket-add"
-              color={focused ? '#0f2e00' : 'white'}
+              color={focused ? '#2b2b2b' : 'white'}
               size={22}
             />
           ),
