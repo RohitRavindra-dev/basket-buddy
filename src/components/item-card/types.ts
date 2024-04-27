@@ -3,4 +3,5 @@ export type ItemCardProps = {
     brand: string,
     quantity: number,
     uom: string,
+    adjustmentHandler: ()=>any
 }
